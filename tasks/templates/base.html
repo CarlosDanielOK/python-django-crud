@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django CRUD</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/tasks">Tasks</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="/cerrarsesion">Cerrar sesión</a></li>
+        {% else %}
+        <li><a href="/signup">Registrarte</a></li>
+        <li><a href="/iniciarsesion">Iniciar sesión</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>
